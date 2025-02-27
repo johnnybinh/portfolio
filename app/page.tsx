@@ -58,8 +58,14 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section id="project" className="p-20 h-full">
-        project
+      <section
+        id="project"
+        className="h-full flex flex-col gap-8 md:px-[15em] sm:px-2 px-4 py-32"
+      >
+        <center>
+          {" "}
+          <h1 className="font-bold text-2xl">My Project</h1>
+        </center>
       </section>
     </div>
   );

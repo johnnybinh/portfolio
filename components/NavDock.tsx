@@ -3,6 +3,7 @@
 import React from "react";
 
 import { Dock, DockIcon } from "@/components/ui/dock";
+import { Github, Linkedin } from "lucide-react";
 
 import { House } from "lucide-react";
 import { PencilRuler } from "lucide-react";
@@ -25,6 +26,22 @@ export function NavDock() {
       <TooltipProvider>
         <Dock direction="middle">
           {NavLink.map((nav, index) => (
+            <DockIcon key={index}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a scroll={true} href={nav.path}>
+                    {nav.icon}
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent dir="down">
+                  <p>{nav.tooltip}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ))}
+
+          <Separator orientation="vertical" />
+          {Social.map((nav, index) => (
             <DockIcon key={index}>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -57,9 +74,17 @@ const NavLink = [
     icon: <PencilRuler />,
     tooltip: "Project",
   },
+];
+
+const Social = [
   {
-    path: "/blog",
-    icon: <Album />,
-    tooltip: "Blog",
+    path: "https://github.com/johnnybinh",
+    icon: <Github />,
+    tooltip: "Github",
+  },
+  {
+    path: "https://linkedin.com/in/binh-nguyen-918241294",
+    icon: <Linkedin />,
+    tooltip: "Github",
   },
 ];
